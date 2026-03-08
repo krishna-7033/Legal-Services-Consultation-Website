@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Network — Advocate Jiji</title>
+    <meta
+      name="description"
+      content="Trusted associates and collaborators of Advocate Jiji — senior counsel, chartered accountants, IP lawyers, company secretaries and more."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* === Network-page-specific styles === */
+      .net-hero {
+        padding: 8rem 0 3.5rem;
+        background:
+          radial-gradient(
+            ellipse at 30% 0%,
+            rgba(197, 160, 94, 0.1),
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 100%,
+            rgba(28, 45, 74, 0.06),
+            transparent 45%
+          );
+        text-align: center;
+      }
+      .net-hero h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: var(--clr-navy);
+        margin: 0 0 0.8rem;
+        line-height: 1.12;
+      }
+      .net-hero .lead {
+        max-width: 60ch;
+        margin: 0 auto;
+        color: var(--clr-ink-soft);
+        font-size: 1.08rem;
+      }
+
+      .net-section {
+        padding: 4rem 0;
+      }
+      .net-section:nth-child(odd) {
+        background: var(--clr-surface);
+      }
+      .net-section:nth-child(even) {
+        background: var(--clr-bg);
+      }
+
+      .net-profile {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+      @media (min-width: 760px) {
+        .net-profile {
+          grid-template-columns: 30rem 1fr;
+        }
+      }
+
+      .net-avatar-lg {
+        width: 30rem;
+        height: 18rem;
+        display: block;
+        margin: 0 auto;
+        border-radius: 12px;
+        /* border: 4px solid var(--clr-gold); */
+        object-fit: cover;
+        background: var(--clr-navy);
+      }
+      .net-details h2 {
+        font-family: var(--font-serif);
+        font-size: 1.6rem;
+        color: var(--clr-navy);
+        margin: 0 0 0.3rem;
+      }
+      .net-role {
+        font-weight: 600;
+        color: var(--clr-gold);
+        font-size: 0.9rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin: 0 0 1rem;
+      }
+      .net-details p {
+        color: var(--clr-ink-soft);
+        margin: 0 0 0.8rem;
+      }
+      .net-details ul {
+        color: var(--clr-ink-soft);
+        margin: 0 0 1rem;
+      }
+      .net-details ul li {
+        margin-bottom: 0.4rem;
+      }
+      .net-details strong {
+        color: var(--clr-ink);
+      }
+
+      .net-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.8rem;
+      }
+      .net-tag {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        background: var(--clr-navy-light);
+        color: var(--clr-navy);
+        border-radius: 999px;
+        padding: 0.32rem 0.8rem;
+      }
+
+      .net-cta-bar {
+        text-align: center;
+        padding: 3.5rem 0 4rem;
+        background: var(--clr-bg);
+      }
+      .net-cta-bar p {
+        max-width: 50ch;
+        margin: 0 auto 1.2rem;
+        color: var(--clr-ink-soft);
+        font-size: 1.05rem;
+      }
+
+      /* Back link */
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-weight: 600;
+        font-size: 0.92rem;
+        margin-bottom: 0.5rem;
+      }
+      .back-link::before {
+        content: "\2190";
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ====== NAVIGATION ====== -->
+    <header id="topbar" class="topbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo" aria-label="Home">
+          <span class="logo-icon">&#9878;</span>
+          <span class="logo-text">Advocate&nbsp;Jiji</span>
+        </a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="mainNav" class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#practice">Practice Areas</a>
+          <a href="network.html" class="active">Network</a>
+          <a href="index.html#contact" class="nav-cta">Book Consultation</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ====== HERO ====== -->
+    <section class="net-hero">
+      <div class="container">
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+        <br />
+        <br />
+        <p class="section-tag">Collaborative Strength</p>
+        <h1>Professional Network</h1>
+        <p class="lead">
+          Complex matters demand multidisciplinary expertise. I work alongside a
+          curated group of independent professionals — each a specialist in
+          their domain — so your interests are protected from every angle.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====== PROFILE 1 ====== -->
+    <section class="net-section">
+      <div class="container">
+        <div class="net-profile fade-in">
+          <div>
+            <img
+              src="photo.jpg"
+              alt="Senior Criminal Counsel"
+              class="net-avatar-lg"
+            />
+          </div>
+          <div class="net-details">
+            <h2>Senior Criminal Counsel</h2>
+            <p class="net-role">Advocate &middot; 20+ Years of Practice</p>
+            <p>
+              A seasoned criminal-law practitioner with extensive experience
+              before the Supreme Court of India and the Delhi High Court.
+              Specialises in economic offences, white-collar crime, PMLA
+              matters, and high-stakes trial defence.
+            </p>
+            <ul>
+              <li>
+                Successfully represented clients in landmark PMLA &amp; FEMA
+                proceedings
+              </li>
+              <li>
+                Expertise in anticipatory bail, quashing petitions, and criminal
+                appeals
+              </li>
+              <li>
+                Regularly consulted by corporate houses for fraud prevention
+                strategies
+              </li>
+              <li>
+                Former additional standing counsel, Government of NCT of Delhi
+              </li>
+            </ul>
+            <div class="net-tags">
+              <span class="net-tag">White-Collar Crime</span>
+              <span class="net-tag">PMLA / FEMA</span>
+              <span class="net-tag">Criminal Appeals</span>
+              <span class="net-tag">Trial Defence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROFILE 2 ====== -->
+    <section class="net-section">
+      <div class="container">
+        <div class="net-profile fade-in">
+          <div>
+            <img
+              src="photo.jpg"
+              alt="Chartered Accountant"
+              class="net-avatar-lg"
+            />
+          </div>
+          <div class="net-details">
+            <h2>Chartered Accountant</h2>
+            <p class="net-role">
+              FCA &middot; DISA &middot; 15+ Years of Practice
+            </p>
+            <p>
+              A Fellow member of ICAI with deep expertise in direct &amp;
+              indirect taxation, forensic accounting, and financial due
+              diligence. Provides end-to-end tax advisory for individuals, HUFs,
+              and corporates.
+            </p>
+            <ul>
+              <li>
+                Income-tax assessments, appeals before CIT(A), ITAT and High
+                Court
+              </li>
+              <li>GST compliance, audits, and dispute resolution</li>
+              <li>
+                Forensic audits for fraud detection in commercial disputes
+              </li>
+              <li>
+                Financial due diligence for mergers, acquisitions, and
+                investment rounds
+              </li>
+            </ul>
+            <div class="net-tags">
+              <span class="net-tag">Tax Advisory</span>
+              <span class="net-tag">Forensic Accounting</span>
+              <span class="net-tag">GST</span>
+              <span class="net-tag">Due Diligence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROFILE 3 ====== -->
+    <section class="net-section">
+      <div class="container">
+        <div class="net-profile fade-in">
+          <div>
+            <img
+              src="photo.jpg"
+              alt="IP & Technology Lawyer"
+              class="net-avatar-lg"
+            />
+          </div>
+          <div class="net-details">
+            <h2>IP &amp; Technology Lawyer</h2>
+            <p class="net-role">
+              Advocate &middot; Registered Patent Agent &middot; 12+ Years
+            </p>
+            <p>
+              A specialist in intellectual-property law and technology
+              regulation, advising startups, tech companies, and creative
+              professionals on protecting and monetising their IP assets.
+            </p>
+            <ul>
+              <li>
+                Trademark prosecution, opposition &amp; infringement litigation
+              </li>
+              <li>
+                Patent drafting, filing, and enforcement across multiple
+                jurisdictions
+              </li>
+              <li>
+                Copyright registration, licensing, and anti-piracy enforcement
+              </li>
+              <li>
+                Data privacy compliance under the Digital Personal Data
+                Protection Act
+              </li>
+              <li>
+                IT Act disputes, intermediary liability, and content takedowns
+              </li>
+            </ul>
+            <div class="net-tags">
+              <span class="net-tag">Trademarks</span>
+              <span class="net-tag">Patents</span>
+              <span class="net-tag">Copyright</span>
+              <span class="net-tag">Data Privacy</span>
+              <span class="net-tag">IT Act</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROFILE 4 ====== -->
+    <section class="net-section">
+      <div class="container">
+        <div class="net-profile fade-in">
+          <div>
+            <img
+              src="photo.jpg"
+              alt="Company Secretary"
+              class="net-avatar-lg"
+            />
+          </div>
+          <div class="net-details">
+            <h2>Company Secretary</h2>
+            <p class="net-role">ACS &middot; 10+ Years of Practice</p>
+            <p>
+              An Associate member of ICSI, advising companies on corporate
+              governance, regulatory compliance, and board-level strategy.
+              Extensive experience with ROC and NCLT filings.
+            </p>
+            <ul>
+              <li>Company incorporation (Pvt. Ltd., LLP, OPC, Section 8)</li>
+              <li>Annual compliance, ROC filings, and statutory audits</li>
+              <li>
+                NCLT petitions — oppression &amp; mismanagement, winding up
+              </li>
+              <li>FEMA compliance, ECB filings, and FDI structuring</li>
+              <li>Secretarial audit and due diligence for fundraising</li>
+            </ul>
+            <div class="net-tags">
+              <span class="net-tag">Corporate Governance</span>
+              <span class="net-tag">NCLT</span>
+              <span class="net-tag">ROC Compliance</span>
+              <span class="net-tag">FEMA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROFILE 5 ====== -->
+    <section class="net-section">
+      <div class="container">
+        <div class="net-profile fade-in">
+          <div>
+            <img
+              src="photo.jpg"
+              alt="Real-Estate & RERA Counsel"
+              class="net-avatar-lg"
+            />
+          </div>
+          <div class="net-details">
+            <h2>Real-Estate &amp; RERA Counsel</h2>
+            <p class="net-role">Advocate &middot; 8+ Years of Practice</p>
+            <p>
+              Focused on property law, RERA complaints, and real-estate
+              transactions. Assists buyers, builders, and investors with
+              litigation, documentation and regulatory compliance.
+            </p>
+            <ul>
+              <li>
+                RERA complaint filing, hearings, and appeals before the
+                Appellate Tribunal
+              </li>
+              <li>Title verification, sale deed drafting, and conveyancing</li>
+              <li>Builder-buyer disputes and possession delay claims</li>
+              <li>Collaboration agreements and joint-development advisory</li>
+            </ul>
+            <div class="net-tags">
+              <span class="net-tag">RERA</span>
+              <span class="net-tag">Property Law</span>
+              <span class="net-tag">Title Verification</span>
+              <span class="net-tag">Builder-Buyer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROFILE 6 ====== -->
+    <section class="net-section">
+      <div class="container">
+        <div class="net-profile fade-in">
+          <div>
+            <img
+              src="photo.jpg"
+              alt="Family Law Specialist"
+              class="net-avatar-lg"
+            />
+          </div>
+          <div class="net-details">
+            <h2>Family Law Specialist</h2>
+            <p class="net-role">Advocate &amp; Mediator &middot; 14+ Years</p>
+            <p>
+              A compassionate practitioner handling sensitive matrimonial and
+              family disputes. Trained mediator who prioritises amicable
+              resolution while being fully prepared for contested litigation
+              when necessary.
+            </p>
+            <ul>
+              <li>Contested &amp; mutual-consent divorce proceedings</li>
+              <li>Child custody, visitation, and guardianship matters</li>
+              <li>Domestic violence petitions under the DV Act</li>
+              <li>
+                Maintenance claims under CrPC &amp; Hindu Adoption &amp;
+                Maintenance Act
+              </li>
+              <li>Court-annexed and private mediation for family disputes</li>
+            </ul>
+            <div class="net-tags">
+              <span class="net-tag">Divorce</span>
+              <span class="net-tag">Child Custody</span>
+              <span class="net-tag">Domestic Violence</span>
+              <span class="net-tag">Mediation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== DISCLAIMER + CTA ====== -->
+    <section class="net-cta-bar">
+      <div class="container">
+        <div class="network-disclaimer">
+          <strong>Disclaimer:</strong> The professionals listed above are
+          independent practitioners and not employees or partners of Advocate
+          Jiji's practice. Any engagement with a network associate is a
+          separate, independent professional relationship. Their inclusion here
+          is for informational purposes only and does not constitute a joint
+          practice, partnership, or endorsement of any specific outcome.
+        </div>
+        <br />
+        <p>Need multidisciplinary support for your matter?</p>
+        <a href="index.html#contact" class="btn btn-primary"
+          >Request a Consultation</a
+        >
+      </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>&copy; 2026 Advocate Jiji. All rights reserved.</p>
+        <p class="container footer-inner">
+          This website is for informational purposes only and does not
+          constitute legal advice. No advocate-client relationship is formed by
+          using or accessing this site.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Minimal JS for this page — nav toggle + scroll reveal
+      const topbar = document.getElementById("topbar");
+      const navToggle = document.getElementById("navToggle");
+      const mainNav = document.getElementById("mainNav");
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          topbar.classList.toggle("scrolled", window.scrollY > 20);
+        },
+        { passive: true },
+      );
+
+      navToggle.addEventListener("click", () => {
+        const open = mainNav.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", open);
+      });
+      mainNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // Scroll-reveal
+      const fadeEls = document.querySelectorAll(".fade-in");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      fadeEls.forEach((el) => revealObserver.observe(el));
+    </script>
+  </body>
+</html>
