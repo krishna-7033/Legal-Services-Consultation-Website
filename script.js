@@ -4,7 +4,7 @@
   /* ========================================
    *  CONFIG — update these with real values
    * ======================================== */
-  const LAWYER_PHONE = "919876543210"; // WhatsApp number (country code, no +)
+  const LAWYER_PHONE = "7033169536"; // WhatsApp number (country code, no +)
   const LAWYER_EMAIL = "advocate.jiji@example.com";
 
   /* ===== DOM refs ===== */
@@ -109,53 +109,43 @@
     const name = form.name.value.trim();
     const phone = form.phone.value.trim();
     const email = form.email.value.trim();
-    const area = form.area.value;
-    const mode = form.mode.value;
+    const area = form.area ? form.area.value : "";
+    const mode = form.mode ? form.mode.value : "";
     const time = form.time.value.trim();
     const message = form.message.value.trim();
 
-    // Basic validation
+    // Basic validation (only name and phone are required)
     let valid = true;
-    [form.name, form.phone, form.email, form.message].forEach((field) => {
+    [form.name, form.phone].forEach((field) => {
       field.classList.remove("invalid");
       if (!field.value.trim()) {
         field.classList.add("invalid");
         valid = false;
       }
     });
+    // Remove invalid state from optional fields
+    form.email.classList.remove("invalid");
+    form.message.classList.remove("invalid");
+    // Validate email only if provided
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       form.email.classList.add("invalid");
       valid = false;
     }
     if (!valid) return;
 
-    /* --- Email notification (mailto) --- */
-    const subject = encodeURIComponent(`New Consultation Request from ${name}`);
-    const body = encodeURIComponent(
-      `New consultation request received via website:\n\n` +
-        `Name: ${name}\n` +
-        `Phone: ${phone}\n` +
-        `Email: ${email}\n` +
-        `Practice Area: ${area || "Not specified"}\n` +
-        `Preferred Mode: ${mode || "Not specified"}\n` +
-        `Preferred Time: ${time || "Not specified"}\n\n` +
-        `Message:\n${message}\n`,
-    );
-    // Open default mail client with pre-filled message
-    window.location.href = `mailto:${LAWYER_EMAIL}?subject=${subject}&body=${body}`;
-
-    /* --- WhatsApp pre-fill --- */
+    /* --- WhatsApp redirect --- */
     const waText = encodeURIComponent(
       `*Consultation Request*\n\n` +
-        `Name: ${name}\n` +
-        `Phone: ${phone}\n` +
-        `Email: ${email}\n` +
-        `Practice Area: ${area || "N/A"}\n` +
-        `Preferred Mode: ${mode || "N/A"}\n` +
-        `Preferred Time: ${time || "N/A"}\n\n` +
-        `Message:\n${message}`,
+      `Name: ${name}\n` +
+      `Phone: ${phone}\n` +
+      `${email ? `Email: ${email}\n` : ""}` +
+      `${area ? `Practice Area: ${area}\n` : ""}` +
+      `${mode ? `Preferred Mode: ${mode}\n` : ""}` +
+      `${time ? `Preferred Time: ${time}\n` : ""}` +
+      `${message ? `\nMessage:\n${message}` : ""}`
     );
-    waBtn.href = `https://wa.me/${LAWYER_PHONE}?text=${waText}`;
+    // Redirect to WhatsApp
+    window.location.href = `https://wa.me/${LAWYER_PHONE}?text=${waText}`;
 
     /* --- Show success state --- */
     submitBtn.classList.add("hidden");
