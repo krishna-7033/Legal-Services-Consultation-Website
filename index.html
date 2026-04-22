@@ -6,44 +6,50 @@
     <title>Advocate Jiji — Legal Practice, New Delhi</title>
     <meta
       name="description"
-      content="Trusted legal counsel in New Delhi. Practice areas include criminal, civil, corporate, family, and constitutional law. Book a consultation today."
+      content="Get legal help in New Delhi. We help with criminal cases, family matters, business problems, property issues, and more. Call us today for free advice."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <!-- ====== TOP INFO BAR ====== -->
     <div class="topinfo">
       <div class="container topinfo-inner">
-        <a href="tel:+919876543210" class="topinfo-item">
-          <span class="icon">📞</span> +91 98765 43210
+        <a href="tel:+917033169536" class="topinfo-item">
+          <span class="icon">📞</span>+91 7033169536
         </a>
         <a href="mailto:advocate.jiji@example.com" class="topinfo-item">
           <span class="icon">✉️</span> advocate.jiji@example.com
         </a>
       </div>
     </div>
-    <!-- ====== NAVIGATION ====== -->
+
     <header id="topbar" class="topbar">
       <div class="container nav-inner">
-        <a href="#home" class="logo" aria-label="Home">
+        <a href="#home" class="logo" aria-label="Advocate Jiji home">
           <span class="logo-icon">&#9878;</span>
-          <span class="logo-text">Advocate&nbsp;Jiji</span>
+          <span class="logo-text">Advocate Jiji</span>
         </a>
+
         <button
           class="nav-toggle"
           id="navToggle"
           aria-label="Open menu"
           aria-expanded="false"
+          aria-controls="mainNav"
+          type="button"
         >
-          <span></span><span></span><span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-        <nav id="mainNav" class="main-nav">
+
+        <nav id="mainNav" class="main-nav" aria-label="Primary navigation">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#practice">Practice Areas</a>
@@ -52,131 +58,129 @@
         </nav>
       </div>
     </header>
-    <!-- ====== CONTACT SECTION WRAPPER ====== -->
-      <section class="section-wrapper section-wrapper--contact">
-  <section id="contact" class="section section-contact section-inner">
-    <div class="container">
-      <div class="contact-layout">
-        <div class="contact-intro">
-          <img
-            src="images/consult.png"
-            alt="Consult Icon"
-            class="consult-icon"
-          />
-          <p class="section-tag">Let's Talk</p>
-          <h2 class="section-title">Request a Consultation</h2>
-          <p class="contact-description">
-            Have a legal matter? Share your details and I'll get back to you
-            within 24 hours. Choose WhatsApp for faster communication.
-          </p>
-        </div>
 
-        <div class="contact-form-wrapper">
-          <form id="consultForm" class="consult-form" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="cfName">Full Name <span class="req">*</span></label>
-                <input
-                  type="text"
-                  id="cfName"
-                  name="name"
-                  required
-                  autocomplete="name"
-                  placeholder="e.g. Rahul Sharma"
-                />
-              </div>
+    <div id="navOverlay" class="nav-overlay"></div>
 
-              <div class="form-group">
-                <label for="cfPhone">Phone Number <span class="req">*</span></label>
-                <input
-                  type="tel"
-                  id="cfPhone"
-                  name="phone"
-                  required
-                  autocomplete="tel"
-                  placeholder="+91 ***** *****"
-                />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="cfEmail">Email Address <span>(Optional)</span></label>
-              <input
-                type="email"
-                id="cfEmail"
-                name="email"
-                autocomplete="email"
-                placeholder="you@example.com"
+    <section class="section-wrapper section-wrapper--contact">
+      <section id="contact" class="section section-contact section-inner">
+        <div class="container">
+          <div class="contact-layout">
+            <div class="contact-intro">
+              <img
+                src="images/consult.png"
+                alt="Consult Icon"
+                class="consult-icon"
               />
-            </div>
-
-            <div class="form-group">
-              <label for="cfMsg">Brief Description of Your Matter <span>(Optional)</span></label>
-              <textarea
-                id="cfMsg"
-                name="message"
-                rows="2"
-                placeholder="Give a brief overview so I can prepare for our consultation…"
-              ></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
-              Send Consultation Request
-            </button>
-
-            <div id="formSuccess" class="form-success hidden">
-              <div class="success-icon">&#10003;</div>
-              <h3>Request Has Been Submitted</h3>
-              <p>
-                Thank you. An email notification has been sent. I will review
-                your inquiry and respond within 24 hours.
+              <p class="section-tag">Let's Talk</p>
+              <h2 class="section-title">Get Legal Help Now</h2>
+              <p class="contact-description">
+                Have a legal problem? Tell us what happened and we will call you
+                back within 24 hours. Or message us on WhatsApp to get help
+                faster.
               </p>
-              <p class="wa-prompt">
-                You may also send the details directly via WhatsApp for a quicker response:
-              </p>
-              <a
-                id="waBtn"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-whatsapp"
-              >
-                <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.174.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                Send on WhatsApp
-              </a>
+              <p class="contact-free">✓ First consultation is FREE</p>
             </div>
 
-            <p class="form-disclaimer">
-              <strong>Disclaimer:</strong> Submitting this form does not create an advocate-client relationship.
-            </p>
-          </form>
+            <div class="contact-form-wrapper">
+              <form id="consultForm" class="consult-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="cfName"
+                      >Full Name <span class="req">*</span></label
+                    >
+                    <input
+                      type="text"
+                      id="cfName"
+                      name="name"
+                      required
+                      autocomplete="name"
+                      placeholder="e.g. Rahul Sharma"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cfPhone"
+                      >Phone Number <span class="req">*</span></label
+                    >
+                    <input
+                      type="tel"
+                      id="cfPhone"
+                      name="phone"
+                      required
+                      autocomplete="tel"
+                      placeholder="+91 ***** *****"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="cfEmail"
+                    >Email Address <span>(Optional)</span></label
+                  >
+                  <input
+                    type="email"
+                    id="cfEmail"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="you@example.com"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="cfMsg"
+                    >Tell Us About Your Problem <span>(Optional)</span></label
+                  >
+                  <textarea
+                    id="cfMsg"
+                    name="message"
+                    rows="2"
+                    placeholder="Write what happened so we can help you better…"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-full"
+                  id="submitBtn"
+                >
+                  Send My Request
+                </button>
+
+                <div id="formSuccess" class="form-success hidden">
+                  <div class="success-icon">&#10003;</div>
+                  <h3>Request Received</h3>
+                  <p>
+                    Thank you! We got your message. We will read it and call you
+                    back within 24 hours.
+                  </p>
+                  
+                </div>
+
+                <p class="form-disclaimer">
+                  <strong>Important:</strong> Sending this message does not mean
+                  we are your lawyer yet.
+                </p>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-</section>
+      </section>
+    </section>
 
-    <!-- ====== HERO / HOME SECTION WRAPPER ====== -->
-    <section class="section-wrapper section-wrapper--hero">
-      <section id="home" class="hero section-inner">
+    <section id="home" class="section-wrapper section-wrapper--hero">
+      <section class="hero section-inner">
         <div class="container hero-grid">
           <div class="hero-content">
-            <p class="hero-tag">Trusted Legal Counsel &middot; New Delhi</p>
-            <h1>Experienced Advocacy.<br />Personalised Solutions.</h1>
+            <p class="hero-tag">Real Legal Help You Can Trust • New Delhi</p>
+            <h1>Lawyers Who Care.<br />Help That Works.</h1>
             <p class="hero-sub">
-              With a commitment to integrity, diligence, and client-centred
-              representation, I help individuals and businesses navigate complex
-              legal challenges with confidence.
+              We work hard for you. We listen. We care about your problem. We
+              help people and business owners get through tough legal
+              situations.
             </p>
             <div class="hero-actions">
-              <a href="#contact" class="btn btn-primary"
-                >Request a Consultation</a
-              >
-              <a href="#practice" class="btn btn-outline"
-                >View Practice Areas</a
-              >
+              <a href="#contact" class="btn btn-primary">Talk to Us Now</a>
+              <a href="#practice" class="btn btn-outline">See Our Services</a>
             </div>
           </div>
           <div class="hero-badge">
@@ -190,12 +194,11 @@
       </section>
     </section>
 
-    <!-- ====== ABOUT SECTION WRAPPER ====== -->
     <section class="section-wrapper section-wrapper--about">
       <section id="about" class="section section-about section-inner">
         <div class="container">
-          <p class="section-tag">Who We Are</p>
-          <h2 class="section-title">Expert Legal Services Made Affordable</h2>
+          <p class="section-tag">About Us</p>
+          <h2 class="section-title">Good Lawyers. Fair Prices.</h2>
           <div class="about-grid">
             <div class="about-photo-wrap">
               <div
@@ -211,96 +214,85 @@
             </div>
             <div class="about-text">
               <p>
-                <strong>Advocate Jiji</strong> is an enrolled member of the Bar
-                Council of Delhi, practising before the Supreme Court, High
-                Court, and various District Courts.
+                <strong>Advocate Jiji</strong> is a lawyer approved by the Bar
+                Council of Delhi. She works in the top courts of India including
+                the Supreme Court and High Court.
               </p>
               <p>
-                We believe quality legal representation should be affordable for
-                everyone. That's why we offer expert counsel at transparent,
-                competitive rates across all practice areas.
+                We believe good legal help should not cost too much. That's why
+                we give expert advice at fair prices for all kinds of legal
+                problems.
               </p>
               <ul class="about-highlights">
+                <li><strong>Bar Council of Delhi</strong> — Approved Lawyer</li>
+                <li><strong>Supreme Court of India</strong> — Works Here</li>
                 <li>
-                  <strong>Bar Council of Delhi</strong> — Enrolled Advocate
+                  <strong>Free Legal Help</strong> — We help those who need it
+                  most, even if they can't pay
                 </li>
                 <li>
-                  <strong>Supreme Court of India</strong> — Practising Counsel
-                </li>
-                <li>
-                  <strong>Pro Bono Work</strong> — Committed to
-                  access-to-justice initiatives
-                </li>
-                <li>
-                  <strong>Continuing Education</strong> — Regular participant in
-                  judicial conferences &amp; seminars
+                  <strong>Always Learning</strong> — We attend legal training
+                  all the time
                 </li>
               </ul>
-              <a href="#contact" class="btn btn-primary">Get in Touch</a>
+              <a href="#contact" class="btn btn-primary">Contact Me</a>
             </div>
           </div>
         </div>
       </section>
     </section>
 
-    <!-- ====== PRACTICE AREAS SECTION WRAPPER ====== -->
     <section class="section-wrapper section-wrapper--practice">
       <section id="practice" class="section section-practice section-inner">
         <div class="container">
-          <p class="section-tag">Affordable Services</p>
-          <h2 class="section-title">Our Services &amp; Pricing</h2>
+          <p class="section-tag">What We Do</p>
+          <h2 class="section-title">Our Services &amp; What We Charge</h2>
           <div class="practice-grid">
             <div class="practice-card">
-              <div class="practice-icon">&#128220;</div>
-              <h3>Criminal Law</h3>
-              <div class="practice-price">From ₹2,500</div>
+              <div class="practice-icon">&#128221;</div>
+              <h3>ITR</h3>
               <p>
-                Bail applications, trial defence, appeals, anticipatory bail,
-                and quashing petitions.
+                Income Tax Return filing for individuals, professionals, and
+                businesses.
               </p>
             </div>
             <div class="practice-card">
-              <div class="practice-icon">&#127970;</div>
-              <h3>Civil &amp; Property</h3>
-              <div class="practice-price">From ₹3,000</div>
+              <div class="practice-icon">&#129534;</div>
+              <h3>GST</h3>
               <p>
-                Suits for recovery, specific performance, injunctions,
-                partition, and title disputes.
+                GST registration, return filing, notices handling, and
+                compliance support.
               </p>
             </div>
             <div class="practice-card">
               <div class="practice-icon">&#128188;</div>
-              <h3>Corporate &amp; Commercial</h3>
-              <div class="practice-price">From ₹3,500</div>
+              <h3>Company Compliances</h3>
               <p>
-                Company incorporation, contract drafting, NCLT proceedings, and
-                arbitration.
+                ROC filings, annual compliance, and company law procedural
+                support.
               </p>
             </div>
             <div class="practice-card">
-              <div class="practice-icon">&#128106;</div>
-              <h3>Family &amp; Matrimonial</h3>
-              <div class="practice-price">From ₹2,000</div>
+              <div class="practice-icon">&#128196;</div>
+              <h3>Trade Licence</h3>
               <p>
-                Divorce, maintenance, child custody, and domestic violence
-                proceedings.
+                Trade licence application, renewal, and municipal documentation
+                support.
               </p>
             </div>
             <div class="practice-card">
-              <div class="practice-icon">&#9878;</div>
-              <h3>Constitutional &amp; Writ</h3>
-              <div class="practice-price">From ₹4,000</div>
+              <div class="practice-icon">&#127860;</div>
+              <h3>FSSAI</h3>
               <p>
-                Fundamental rights petitions, PILs, service matters, and
-                administrative challenges.
+                FSSAI registration and food business compliance for licensing
+                and renewals.
               </p>
             </div>
             <div class="practice-card">
-              <div class="practice-icon">&#128221;</div>
-              <h3>Consumer &amp; Regulatory</h3>
-              <div class="practice-price">From ₹1,500</div>
+              <div class="practice-icon">&#127970;</div>
+              <h3>UDHYAMI Registration - MSME</h3>
               <p>
-                Consumer complaints, RERA disputes, RTI appeals, and regulatory
+                Udhyami/Udyam registration for MSME benefits, recognition, and
                 compliance.
               </p>
             </div>
@@ -309,7 +301,6 @@
       </section>
     </section>
 
-    <!-- ====== TRUST BADGES SECTION WRAPPER ====== -->
     <section class="section-wrapper section-wrapper--badges">
       <section class="section section-badges section-inner">
         <div class="container">
@@ -317,72 +308,69 @@
             <div class="badge-item">
               <div class="badge-icon">⭐</div>
               <h4>5 Star Rated</h4>
-              <p>Highly trusted by clients</p>
+              <p>Clients love us</p>
             </div>
             <div class="badge-item">
               <div class="badge-icon">✓</div>
-              <h4>Bar Council Registered</h4>
-              <p>Enrolled Advocate, Delhi</p>
+              <h4>Approved Lawyer</h4>
+              <p>Official lawyer in Delhi</p>
             </div>
             <div class="badge-item">
               <div class="badge-icon">🏆</div>
-              <h4>10+ Years Experience</h4>
-              <p>Supreme Court Practitioner</p>
+              <h4>10+ Years of Help</h4>
+              <p>Works in top courts</p>
             </div>
             <div class="badge-item">
               <div class="badge-icon">💼</div>
-              <h4>Expert Counsel</h4>
-              <p>All practice areas covered</p>
+              <h4>Expert Help</h4>
+              <p>We handle all kinds of cases</p>
             </div>
           </div>
         </div>
       </section>
     </section>
 
-    <!-- ====== PROFESSIONAL NETWORK SECTION WRAPPER ====== -->
     <section class="section-wrapper section-wrapper--network">
       <section id="network" class="section section-network section-inner">
         <div class="container">
-          <p class="section-tag">Collaborative Strength</p>
-          <h2 class="section-title">Professional Network</h2>
+          <p class="section-tag">Work Together</p>
+          <h2 class="section-title">Our Compliance Network</h2>
           <p class="network-intro">
-            Complex legal matters often benefit from a multidisciplinary
-            approach. I collaborate with a trusted circle of independent
-            professionals — fellow advocates, chartered accountants, company
-            secretaries, and domain experts — to deliver well-rounded counsel
-            when your matter demands it.
+            Compliance work needs a strong support system. We work with
+            experienced professionals for tax, registration, and regulatory
+            requirements so your filings stay accurate and on time.
           </p>
           <div class="network-grid">
-            <div class="network-card">
-              <div class="network-avatar">SC</div>
-              <h3>Senior Criminal Counsel</h3>
-              <p>
-                Specialising in white-collar crime and economic offences with
-                20+ years of practice.
-              </p>
-            </div>
             <div class="network-card">
               <div class="network-avatar">CA</div>
               <h3>Chartered Accountant</h3>
               <p>
-                Tax advisory, forensic accounting, and financial due diligence
-                services.
-              </p>
-            </div>
-            <div class="network-card">
-              <div class="network-avatar">IP</div>
-              <h3>IP &amp; Tech Lawyer</h3>
-              <p>
-                Trademarks, patents, copyright prosecution and enforcement, data
-                privacy compliance.
+                Handles ITR filing, tax planning, GST returns, and assessment
+                support.
               </p>
             </div>
             <div class="network-card">
               <div class="network-avatar">CS</div>
               <h3>Company Secretary</h3>
               <p>
-                Corporate governance, regulatory filings, ROC compliance, and
-                board advisory.
+                Manages company compliances, annual filings, and governance
+                documentation.
+              </p>
+            </div>
+            <div class="network-card">
+              <div class="network-avatar">TR</div>
+              <h3>Trade Licence Consultant</h3>
+              <p>
+                Supports trade licence applications, renewals, and municipal
+                compliance paperwork.
+              </p>
+            </div>
+            <div class="network-card">
+              <div class="network-avatar">FS</div>
+              <h3>FSSAI &amp; MSME Specialist</h3>
+              <p>
+                Assists with FSSAI and Udhyami (MSME) registration, updates, and
+                compliance support.
               </p>
             </div>
           </div>
@@ -390,15 +378,12 @@
             <strong>Disclaimer:</strong> The professionals listed above are
             independent practitioners and not employees or partners of Advocate
             Jiji's practice. Any engagement with a network associate is a
-            separate, independent professional relationship. Their inclusion
-            here is for informational purposes only and does not constitute a
-            joint practice, partnership, or endorsement of any specific outcome.
+            separate, independent professional relationship.
           </div>
         </div>
       </section>
     </section>
 
-    <!-- ====== FOOTER SECTION WRAPPER ====== -->
     <section class="section-wrapper section-wrapper--footer">
       <footer class="footer">
         <div class="container footer-content">
@@ -407,7 +392,6 @@
             <p class="footer-tagline">Expert Legal Services Made Affordable</p>
             <p class="footer-location">New Delhi</p>
           </div>
-
           <div class="footer-section footer-links">
             <h4 class="footer-title">Quick Links</h4>
             <ul class="footer-list">
@@ -418,7 +402,6 @@
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-
           <div class="footer-section footer-contact">
             <h4 class="footer-title">Get in Touch</h4>
             <ul class="footer-list footer-contact-list">
@@ -432,7 +415,6 @@
             </ul>
           </div>
         </div>
-
         <div class="footer-bottom">
           <p class="footer-copyright">
             &copy; 2026 Advocate Jiji. All rights reserved.
