@@ -106,6 +106,57 @@ ul {
   }
 }
 
+@keyframes formJiggle {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-8px);
+  }
+  40% {
+    transform: translateX(8px);
+  }
+  60% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes cardFloatIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes sealGlow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes ledgerSweep {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(120%);
+  }
+}
+
 /* top info bar */
 .topinfo {
   position: fixed;
@@ -507,22 +558,140 @@ ul {
 .practice-card,
 .badge-item,
 .network-card {
+  position: relative;
+  overflow: hidden;
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius);
   padding: 1.25rem;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  animation: cardFloatIn 0.6s ease both;
+}
+
+.practice-card::before,
+.badge-item::before,
+.network-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--clr-gold) 48%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+.practice-card::after,
+.badge-item::after,
+.network-card::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  bottom: -12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 204, 0, 0.25) 0%,
+    rgba(255, 204, 0, 0) 70%
+  );
+  animation: sealGlow 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.practice-card:hover,
+.badge-item:hover,
+.network-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 102, 204, 0.3);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.practice-card:hover::before,
+.badge-item:hover::before,
+.network-card:hover::before {
+  animation: ledgerSweep 0.8s ease;
 }
 
 .practice-card {
   display: grid;
   gap: 0.45rem;
   border-top: 4px solid var(--clr-accent);
+  align-content: start;
 }
 
 .practice-price {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--clr-accent);
+}
+
+.service-link {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: fit-content;
+  min-height: 34px;
+  margin-top: 0.3rem;
+  padding: 0.42rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 204, 0, 0.55);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #2b2b2b;
+  background: transparent;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.service-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 204, 0, 0.2) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-135%);
+  transition: transform 0.55s ease;
+}
+
+.service-link:hover {
+  color: #1f1f1f;
+  text-decoration: none;
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  filter: saturate(1.05);
+}
+
+.service-link:hover::before {
+  transform: translateX(135%);
+}
+
+.service-link:focus-visible {
+  outline: 3px solid rgba(255, 204, 0, 0.8);
+  outline-offset: 2px;
 }
 
 .practice-card h3,
@@ -557,6 +726,24 @@ ul {
   background: var(--clr-bg-soft);
 }
 
+.practice-grid .practice-card:nth-child(2),
+.badges-grid .badge-item:nth-child(2),
+.network-grid .network-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.practice-grid .practice-card:nth-child(3),
+.badges-grid .badge-item:nth-child(3),
+.network-grid .network-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.practice-grid .practice-card:nth-child(4),
+.badges-grid .badge-item:nth-child(4),
+.network-grid .network-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
 .network-avatar {
   width: 56px;
   height: 56px;
@@ -570,12 +757,123 @@ ul {
 }
 
 .network-disclaimer {
+  position: relative;
+  overflow: hidden;
   background: #fef9ed;
   border-left: 4px solid var(--clr-gold);
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: 1rem 1.15rem;
   font-size: 0.88rem;
   color: var(--clr-ink-soft);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.network-disclaimer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 102, 204, 0.03) 0px,
+    rgba(0, 102, 204, 0.03) 1px,
+    transparent 1px,
+    transparent 16px
+  );
+  pointer-events: none;
+}
+
+.network-disclaimer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.service-page-main {
+  padding-top: 1rem;
+}
+
+.service-hero,
+.service-block,
+.service-faq,
+.service-cta {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.service-hero {
+  background: linear-gradient(135deg, #ffffff 0%, #fff9e6 100%);
+}
+
+.service-block h2,
+.service-faq h2,
+.service-cta h2 {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  color: var(--clr-accent-dark);
+  font-family: var(--font-casual);
+}
+
+.service-list {
+  display: grid;
+  gap: 0.4rem;
+  padding-left: 1.1rem;
+}
+
+.service-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.service-mini-card {
+  background: #fef9ed;
+  border-left: 4px solid var(--clr-gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.8rem 0.9rem;
+}
+
+.service-mini-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.03rem;
+  color: var(--clr-accent-dark);
+}
+
+.service-mini-card p {
+  margin: 0;
+}
+
+.service-faq details {
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  padding: 0.65rem 0.8rem;
+}
+
+.service-faq details + details {
+  margin-top: 0.55rem;
+}
+
+.service-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--clr-accent-dark);
+}
+
+.breadcrumbs {
+  margin: 0 0 0.55rem;
+  font-size: 0.86rem;
+  color: var(--clr-ink-soft);
+}
+
+.breadcrumbs a {
+  color: var(--clr-accent-dark);
+}
+
+.service-cta .btn {
+  margin-top: 0.5rem;
 }
 
 .section-contact {
@@ -622,6 +920,18 @@ ul {
   padding: 0.85rem;
   box-shadow: var(--shadow-sm);
   animation: fadeInUp 0.6s ease-out;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.consult-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.16);
+}
+
+.consult-form.jiggle {
+  animation: formJiggle 0.45s ease-in-out;
 }
 
 .form-group {
@@ -659,6 +969,12 @@ ul {
   border-color: var(--clr-gold);
   background: #f0f8ff;
   box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.15);
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.25);
 }
 
 .consult-form .btn-primary {
@@ -721,6 +1037,38 @@ ul {
 .footer-section {
   display: grid;
   gap: 0.6rem;
+  transition: transform 0.3s ease;
+}
+
+.footer-section:hover {
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .practice-card,
+  .badge-item,
+  .network-card,
+  .consult-form,
+  .network-disclaimer,
+  .footer-section {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .practice-card::after,
+  .badge-item::after,
+  .network-card::after,
+  .practice-card::before,
+  .badge-item::before,
+  .network-card::before {
+    animation: none !important;
+  }
+}
+
+@media (min-width: 800px) {
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .footer-brand-title {
@@ -745,6 +1093,14 @@ ul {
   padding: 0;
   display: grid;
   gap: 0.6rem;
+}
+
+.footer-list-compact {
+  gap: 0.48rem;
+}
+
+.footer-list a {
+  line-height: 1.35;
 }
 
 .footer-list a,
@@ -775,6 +1131,10 @@ ul {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.78rem;
   line-height: 1.5;
+}
+
+.footer-services .footer-title {
+  margin-bottom: 0.15rem;
 }
 
 @media (min-width: 700px) {
@@ -901,7 +1261,7 @@ ul {
   }
 
   .footer-content {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1.15fr 0.9fr 1fr 1fr;
     gap: 2.5rem;
     padding: 3rem 0 2rem;
   }

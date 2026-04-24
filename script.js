@@ -68,7 +68,13 @@ if (form) {
       }
     }
 
-    if (!valid) return;
+    if (!valid) {
+      form.classList.remove('jiggle');
+      // Force reflow so repeat invalid submits replay the animation every time.
+      void form.offsetWidth;
+      form.classList.add('jiggle');
+      return;
+    }
 
     const waText = encodeURIComponent(
       `*Consultation Request*\n\n` +
@@ -97,5 +103,11 @@ if (form) {
 
   form.querySelectorAll('input, textarea').forEach((field) => {
     field.addEventListener('input', () => field.classList.remove('invalid'));
+  });
+
+  form.addEventListener('animationend', (e) => {
+    if (e.animationName === 'formJiggle') {
+      form.classList.remove('jiggle');
+    }
   });
 }
