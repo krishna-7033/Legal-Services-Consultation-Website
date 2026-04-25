@@ -1088,6 +1088,7 @@ ul {
 
 .contact-layout {
   align-items: start;
+  margin-top: -1rem;
 }
 .contact-description {
   margin-top: -1rem;
