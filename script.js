@@ -1,5 +1,6 @@
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
+const navOverlay = document.getElementById('navOverlay');
 const navLinks = mainNav ? mainNav.querySelectorAll('a') : [];
 const form = document.getElementById('consultForm');
 const submitBtn = document.getElementById('submitBtn');
@@ -11,6 +12,8 @@ const LAWYER_PHONE = '7033169536';
 function closeMenu() {
   if (!navToggle || !mainNav) return;
   mainNav.classList.remove('open');
+  if (navOverlay) navOverlay.classList.remove('open');
+  document.body.classList.remove('menu-open');
   navToggle.setAttribute('aria-expanded', 'false');
   navToggle.setAttribute('aria-label', 'Open menu');
 }
@@ -18,11 +21,23 @@ function closeMenu() {
 function toggleMenu() {
   if (!navToggle || !mainNav) return;
   const isOpen = mainNav.classList.toggle('open');
+  if (navOverlay) navOverlay.classList.toggle('open', isOpen);
+  document.body.classList.toggle('menu-open', isOpen);
   navToggle.setAttribute('aria-expanded', String(isOpen));
   navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 }
 
 if (navToggle && mainNav) {
+  if (!mainNav.querySelector('.nav-close')) {
+    const navCloseBtn = document.createElement('button');
+    navCloseBtn.type = 'button';
+    navCloseBtn.className = 'nav-close';
+    navCloseBtn.setAttribute('aria-label', 'Close menu');
+    navCloseBtn.textContent = '×';
+    navCloseBtn.addEventListener('click', closeMenu);
+    mainNav.prepend(navCloseBtn);
+  }
+
   navToggle.addEventListener('click', toggleMenu);
 
   navLinks.forEach((link) => {
@@ -34,8 +49,16 @@ if (navToggle && mainNav) {
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 860) {
       mainNav.classList.remove('open');
+      if (navOverlay) navOverlay.classList.remove('open');
+      document.body.classList.remove('menu-open');
       navToggle.setAttribute('aria-expanded', 'false');
       navToggle.setAttribute('aria-label', 'Open menu');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+      closeMenu();
     }
   });
 }
