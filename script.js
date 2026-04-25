@@ -7,7 +7,7 @@ const submitBtn = document.getElementById('submitBtn');
 const successBox = document.getElementById('formSuccess');
 const waBtn = document.getElementById('waBtn');
 
-const LAWYER_PHONE = '7033169536';
+const CONSULT_PHONE = '7033169536';
 
 function closeMenu() {
   if (!navToggle || !mainNav) return;
@@ -107,7 +107,7 @@ if (form) {
       `${message ? `\nMessage:\n${message}` : ''}`,
     );
 
-    const waLink = `https://wa.me/${LAWYER_PHONE}?text=${waText}`;
+    const waLink = `https://wa.me/${CONSULT_PHONE}?text=${waText}`;
 
     if (waBtn) {
       waBtn.href = waLink;
