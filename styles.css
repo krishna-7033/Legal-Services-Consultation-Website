@@ -472,6 +472,15 @@ ul {
   font-weight: 700;
 }
 
+.new-rocker-regular {
+  color: sandybrown;
+  font-size: 4rem;
+  font-family: "New Rocker", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .section-wrapper--contact {
   background: var(--clr-surface);
   padding: 0.6rem 0 1.25rem;
@@ -1094,6 +1103,11 @@ ul {
   color: var(--clr-accent);
   border-radius: 2rem;
   padding-right: 0.15rem;
+}
+.decorative-line {
+  width: 6rem;
+  height: 6rem;
+
 }
 
 .contact-free {
