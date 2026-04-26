@@ -1,5 +1,4 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600;700&display=swap");
+/* Bootstrap icons and IBM Plex fonts loaded async via link preload in HTML */
 
 :root {
   --clr-bg: #ffffff;
@@ -46,7 +45,7 @@ body {
   padding-top: var(--header-offset);
   font-family: var(--font-sans);
   color: var(--clr-ink);
-  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #ffffff 100%);
+  background: #ffffff;
   line-height: 1.65;
   overflow-x: hidden;
 }
@@ -203,7 +202,6 @@ ul {
   height: var(--navbar-height);
   z-index: 1190;
   background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--clr-border);
 }
 
@@ -480,7 +478,6 @@ ul {
   font-style: normal;
 }
 
-
 .section-wrapper--contact {
   background: var(--clr-surface);
   padding: 0.6rem 0 1.25rem;
@@ -748,7 +745,7 @@ ul {
     rgba(255, 204, 0, 0.25) 0%,
     rgba(255, 204, 0, 0) 70%
   );
-  animation: sealGlow 3.2s ease-in-out infinite;
+  animation: none;
   pointer-events: none;
 }
 
@@ -764,6 +761,12 @@ ul {
 .badge-item:hover::before,
 .network-card:hover::before {
   animation: ledgerSweep 0.8s ease;
+}
+
+.practice-card:hover::after,
+.badge-item:hover::after,
+.network-card:hover::after {
+  animation: sealGlow 1.2s ease-in-out;
 }
 
 .practice-card {
@@ -1104,11 +1107,14 @@ ul {
   color: var(--clr-accent);
   border-radius: 2rem;
   padding-right: 0.15rem;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  contain: layout style paint;
 }
 .decorative-line {
   width: 6rem;
   height: 6rem;
-
 }
 
 .contact-free {
@@ -1881,6 +1887,52 @@ ul {
 
   .topinfo {
     display: none;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  .practice-card,
+  .badge-item,
+  .network-card,
+  .consult-form,
+  .consult-form .btn-primary,
+  .form-success,
+  .success-icon,
+  .sticky-call-btn,
+  .footer-section {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .practice-card::before,
+  .practice-card::after,
+  .badge-item::before,
+  .badge-item::after,
+  .network-card::before,
+  .network-card::after {
+    animation: none !important;
+  }
+
+  .practice-card:hover,
+  .badge-item:hover,
+  .network-card:hover,
+  .consult-form:hover,
+  .sticky-call-btn:hover,
+  .footer-section:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .section-wrapper--about,
+  .section-wrapper--practice,
+  .section-wrapper--badges,
+  .section-wrapper--network,
+  .section-wrapper--footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 900px;
   }
 }
 

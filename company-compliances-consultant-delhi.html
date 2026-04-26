@@ -29,11 +29,18 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -245,12 +252,12 @@
 
             <div class="trust-badges" aria-label="Quality and security badges">
               <div class="trust-badge">
-                <span class="trust-badge-mark">ISO</span>
-                <small>ISO/IEC 27001:2022</small>
+                <span class="trust-badge-mark">SAFE</span>
+                <small>Data Privacy Practices</small>
               </div>
               <div class="trust-badge">
                 <span class="trust-badge-mark">QMS</span>
-                <small>ISO 9001:2015</small>
+                <small>Standard Operating Process</small>
               </div>
               <div class="trust-badge">
                 <span class="trust-badge-mark">SSL</span>
@@ -271,8 +278,10 @@
             </article>
 
             <article class="trust-card">
-              <div class="trust-icon trust-icon--green" aria-hidden="true">
-              </div>
+              <div
+                class="trust-icon trust-icon--green"
+                aria-hidden="true"
+              ></div>
               <h3>Data Privacy</h3>
               <p>
                 Personal and financial details are handled on a need-to-know
@@ -282,8 +291,7 @@
             </article>
 
             <article class="trust-card">
-              <div class="trust-icon trust-icon--gray" aria-hidden="true">
-              </div>
+              <div class="trust-icon trust-icon--gray" aria-hidden="true"></div>
               <h3>Secure Data Infrastructure</h3>
               <p>
                 Service operations run on secure cloud systems with structured
@@ -293,8 +301,10 @@
 
             <article class="trust-card trust-card--wide">
               <div class="trust-card-head">
-                <div class="trust-icon trust-icon--teal" aria-hidden="true">
-                </div>
+                <div
+                  class="trust-icon trust-icon--teal"
+                  aria-hidden="true"
+                ></div>
                 <h3>Process Excellence</h3>
               </div>
               <p>
