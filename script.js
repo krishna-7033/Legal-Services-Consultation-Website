@@ -7,7 +7,7 @@ const submitBtn = document.getElementById('submitBtn');
 const successBox = document.getElementById('formSuccess');
 const waBtn = document.getElementById('waBtn');
 
-const CONSULT_PHONE = '7033169536';
+const CONSULT_PHONE = '7700806086';
 
 function closeMenu() {
   if (!navToggle || !mainNav) return;

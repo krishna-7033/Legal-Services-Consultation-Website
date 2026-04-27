@@ -220,20 +220,16 @@ ul {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #0066cc;
+  gap: 0;
+  line-height: 0;
 }
 
-.logo-icon {
-  font-size: 1.45rem;
-  color: var(--clr-accent);
-}
-
-.logo-text {
-  line-height: 1;
+.logo-img {
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+  transform: scaleX(1.33);
+  transform-origin: left center;
 }
 
 /* toggle */
@@ -1597,10 +1593,14 @@ ul {
 
 .footer-brand-title {
   margin: 0;
-  font-family: var(--font-serif);
-  font-size: 1.62rem;
-  font-weight: 600;
-  color: #fff;
+}
+
+.footer-logo {
+  height: 88px;
+  background-color: wheat;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .footer-brand {
@@ -1870,12 +1870,31 @@ ul {
     min-height: var(--navbar-height);
   }
 
-  .logo-text {
-    font-size: 1.06rem;
+  .logo-img {
+    height: 58px;
+    transform: scaleX(1.14);
+  }
+
+  .footer-logo {
+    height: 50px;
+    max-width: 72vw;
   }
 
   .hero h1 {
     font-size: clamp(1.85rem, 8vw, 2.35rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-brand {
+    justify-items: start;
+    gap: 0.35rem;
+  }
+
+  .footer-logo {
+    height: 88px;
+    background-color: wheat;
+    max-width: min(78vw, 260px);
   }
 }
 
