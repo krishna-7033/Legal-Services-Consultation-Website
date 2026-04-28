@@ -9,6 +9,36 @@ const waBtn = document.getElementById('waBtn');
 
 const CONSULT_PHONE = '7700806086';
 
+function wrapPageContent() {
+  const body = document.body;
+  if (!body || body.querySelector('.page-content-shell')) return;
+
+  const shell = document.createElement('div');
+  shell.className = 'page-content-shell';
+
+  const nodesToWrap = Array.from(body.children).filter((element) => {
+    return (
+      !element.classList.contains('topinfo') &&
+      !element.classList.contains('topbar') &&
+      !element.classList.contains('nav-overlay') &&
+      !element.classList.contains('sticky-call-btn') &&
+      element.tagName !== 'SCRIPT'
+    );
+  });
+
+  if (!nodesToWrap.length) return;
+
+  const firstNode = nodesToWrap[0];
+  body.insertBefore(shell, firstNode);
+  nodesToWrap.forEach((node) => shell.appendChild(node));
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', wrapPageContent, { once: true });
+} else {
+  wrapPageContent();
+}
+
 function closeMenu() {
   if (!navToggle || !mainNav) return;
   mainNav.classList.remove('open');
