@@ -490,12 +490,10 @@ ul {
 }
 
 .section-wrapper--practice {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 204, 0, 0.08) 0%,
-    rgba(255, 235, 180, 0.1) 100%
-  );
+  background: linear-gradient(135deg, #eef5ff 0%, #dfeaff 52%, #f8fbff 100%);
   padding: 3.25rem 0;
+  border-top: 1px solid rgba(0, 102, 204, 0.14);
+  border-bottom: 1px solid rgba(0, 102, 204, 0.14);
 }
 
 .section-wrapper--badges {
