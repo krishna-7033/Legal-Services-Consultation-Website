@@ -225,8 +225,26 @@ ul {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0;
+  gap: 0.55rem;
   line-height: 0;
+}
+
+.logo-icon-slot {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  /* border: 1px dashed rgba(0, 102, 204, 0.35);
+  background: rgba(0, 102, 204, 0.06); */
+}
+
+.logo-icon-img {
+  width: 2.85rem;
+  height: 2.85rem;
+  object-fit: contain;
+  display: block;
 }
 
 .logo-img {
