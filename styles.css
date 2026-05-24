@@ -248,8 +248,9 @@ ul {
 }
 
 .logo-img {
-  height: 64px;
-  width: auto;
+  height: 56px !important;
+  max-height: 56px !important;
+  width: auto !important;
   object-fit: contain;
   transform: scaleX(1.33);
   transform-origin: left center;
